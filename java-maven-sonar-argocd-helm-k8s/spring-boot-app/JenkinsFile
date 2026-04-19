@@ -21,7 +21,8 @@ pipeline {
     }
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "http:3.89.162.11:9000"
+        JAVA_HOME = '/usr/lib/jvm/java-17-openjdk-amd64'
+        SONAR_URL = "http://3.89.162.11:9000"
       }
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
